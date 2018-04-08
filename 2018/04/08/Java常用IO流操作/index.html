@@ -105,19 +105,19 @@
 
 
 
-<meta name="description" content="###1.基本概念IO：Java对数据的操作是通过流的方式，IO流用来处理设备之间的数据传输，上传文件和下载文件，Java用于操作流的对象都在IO包中。 ###2.IO流的分类 图示：（主要IO流）   ###3.字节流 （1）.字节流基类 1）.InputStream InputStream：字节输入流基类，抽象类是表示字节输入流的所有类的超类。  常用方法： // 从输入流中读取数据的下一个字">
+<meta name="description" content="1.基本概念IO：Java对数据的操作是通过流的方式，IO流用来处理设备之间的数据传输，上传文件和下载文件，Java用于操作流的对象都在IO包中。 2.IO流的分类图示：（主要IO流）   3.字节流（1）.字节流基类 1）.InputStream InputStream：字节输入流基类，抽象类是表示字节输入流的所有类的超类。  常用方法： // 从输入流中读取数据的下一个字节 abstract">
 <meta name="keywords" content="Java IO流">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java常用IO流操作详解">
 <meta property="og:url" content="https://lisau.github.io/2018/04/08/Java常用IO流操作/index.html">
 <meta property="og:site_name" content="Mr_张先生">
-<meta property="og:description" content="###1.基本概念IO：Java对数据的操作是通过流的方式，IO流用来处理设备之间的数据传输，上传文件和下载文件，Java用于操作流的对象都在IO包中。 ###2.IO流的分类 图示：（主要IO流）   ###3.字节流 （1）.字节流基类 1）.InputStream InputStream：字节输入流基类，抽象类是表示字节输入流的所有类的超类。  常用方法： // 从输入流中读取数据的下一个字">
+<meta property="og:description" content="1.基本概念IO：Java对数据的操作是通过流的方式，IO流用来处理设备之间的数据传输，上传文件和下载文件，Java用于操作流的对象都在IO包中。 2.IO流的分类图示：（主要IO流）   3.字节流（1）.字节流基类 1）.InputStream InputStream：字节输入流基类，抽象类是表示字节输入流的所有类的超类。  常用方法： // 从输入流中读取数据的下一个字节 abstract">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/vRaXuFB.png">
-<meta property="og:updated_time" content="2018-04-08T06:10:09.627Z">
+<meta property="og:updated_time" content="2018-04-08T11:46:54.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java常用IO流操作详解">
-<meta name="twitter:description" content="###1.基本概念IO：Java对数据的操作是通过流的方式，IO流用来处理设备之间的数据传输，上传文件和下载文件，Java用于操作流的对象都在IO包中。 ###2.IO流的分类 图示：（主要IO流）   ###3.字节流 （1）.字节流基类 1）.InputStream InputStream：字节输入流基类，抽象类是表示字节输入流的所有类的超类。  常用方法： // 从输入流中读取数据的下一个字">
+<meta name="twitter:description" content="1.基本概念IO：Java对数据的操作是通过流的方式，IO流用来处理设备之间的数据传输，上传文件和下载文件，Java用于操作流的对象都在IO包中。 2.IO流的分类图示：（主要IO流）   3.字节流（1）.字节流基类 1）.InputStream InputStream：字节输入流基类，抽象类是表示字节输入流的所有类的超类。  常用方法： // 从输入流中读取数据的下一个字节 abstract">
 <meta name="twitter:image" content="https://i.imgur.com/vRaXuFB.png">
 
 
@@ -215,16 +215,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -430,12 +420,10 @@
       
 
       
-        <p>###1.基本概念<br>IO：Java对数据的操作是通过流的方式，IO流用来处理设备之间的数据传输，上传文件和下载文件，Java用于操作流的对象都在IO包中。</p>
-<p>###2.IO流的分类</p>
-<p>图示：（主要IO流） </p>
+        <h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h3><p>IO：Java对数据的操作是通过流的方式，IO流用来处理设备之间的数据传输，上传文件和下载文件，Java用于操作流的对象都在IO包中。</p>
+<h3 id="2-IO流的分类"><a href="#2-IO流的分类" class="headerlink" title="2.IO流的分类"></a>2.IO流的分类</h3><p>图示：（主要IO流） </p>
 <p><img src="https://i.imgur.com/vRaXuFB.png" alt=""></p>
-<p>###3.字节流</p>
-<p>（1）.字节流基类</p>
+<h3 id="3-字节流"><a href="#3-字节流" class="headerlink" title="3.字节流"></a>3.字节流</h3><p>（1）.字节流基类</p>
 <p>1）.InputStream</p>
 <p>InputStream：字节输入流基类，抽象类是表示字节输入流的所有类的超类。</p>
 <p> 常用方法：</p>
@@ -578,8 +566,7 @@ void flush()
    bos.flush();
    // 关闭流
    bos.close();
-</code></pre><p>###4.字符流</p>
-<p>（1）.字符流基类</p>
+</code></pre><h3 id="4-字符流"><a href="#4-字符流" class="headerlink" title="4.字符流"></a>4.字符流</h3><p>（1）.字符流基类</p>
 <p>1）.Reader</p>
 <p>Reader:读取字符流的抽象类.</p>
 <p>  常用方法：</p>
@@ -699,8 +686,7 @@ void newLine()
 </code></pre><p>（4）.FileReader、FileWriter</p>
 <p> FileReader：InputStreamReader类的直接子类，用来读取字符文件的便捷类，使用默认字符编码。</p>
 <p> FileWriter：OutputStreamWriter类的直接子类，用来写入字符文件的便捷类，使用默认字符编码。</p>
-<p>###5.高效流效率比对</p>
-<p>读取f盘下的一个视频文件到项目中：文件大小29.5 MB</p>
+<h3 id="5-高效流效率比对"><a href="#5-高效流效率比对" class="headerlink" title="5.高效流效率比对"></a>5.高效流效率比对</h3><p>读取f盘下的一个视频文件到项目中：文件大小29.5 MB</p>
 <p>读取方式一：</p>
 <pre><code>FileInputStream inputStream = new FileInputStream(&quot;f://滑板//HEEL_FLIP.mp4&quot;);
 FileOutputStream outputStream = new FileOutputStream(&quot;HEEL_FLIP.mp4&quot;);
@@ -803,8 +789,8 @@ bos.close();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/08/Hexo0408/" rel="next" title="手把手教你用Hexo+GitHub+Next创建你自己的博客1">
-                <i class="fa fa-chevron-left"></i> 手把手教你用Hexo+GitHub+Next创建你自己的博客1
+              <a href="/2016/08/19/北国的雨/" rel="next" title="北国的雨">
+                <i class="fa fa-chevron-left"></i> 北国的雨
               </a>
             
           </div>
@@ -812,6 +798,10 @@ bos.close();
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/08/NH0408/" rel="prev" title="手把手教你用Hexo+GitHub+Next创建你自己的博客3">
+                手把手教你用Hexo+GitHub+Next创建你自己的博客3 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -868,8 +858,17 @@ bos.close();
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -955,6 +954,22 @@ bos.close();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本概念"><span class="nav-number">1.</span> <span class="nav-text">1.基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-IO流的分类"><span class="nav-number">2.</span> <span class="nav-text">2.IO流的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-字节流"><span class="nav-number">3.</span> <span class="nav-text">3.字节流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-字符流"><span class="nav-number">4.</span> <span class="nav-text">4.字符流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-高效流效率比对"><span class="nav-number">5.</span> <span class="nav-text">5.高效流效率比对</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1523,7 +1538,7 @@ bos.close();
 
   
 
-</body>
+  undefined
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
 </html>
-<!-- ҳ����С���� -->
 <script type="text/javascript" src="/js/src/love.js"></script>
