@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="java基础,Python,Spring,Hibernate,Mabatis" />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -105,17 +105,18 @@
 
 
 
-<meta name="description" content="胆小谨言，难以相处">
-<meta property="og:type" content="website">
-<meta property="og:title" content="文章分类">
-<meta property="og:url" content="https://lisau.github.io/categories/index.html">
+<meta name="description" content="作为一个被问的很多的一个面试题：java中==和equals有什么区别？ 网上普遍的回答都是：==比较的是内存地址，equals比较的是值。即 equals比较的是内容,只要值相同就是true。如 String str  = new String(“aaa”); String str1  = new String(“aaa”); boolean bl = str.equals(str1); 结果就">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java对象的equals方法">
+<meta property="og:url" content="https://lisau.github.io/2018/04/10/java对象的equals方法/index.html">
 <meta property="og:site_name" content="Mr_张先生">
-<meta property="og:description" content="胆小谨言，难以相处">
+<meta property="og:description" content="作为一个被问的很多的一个面试题：java中==和equals有什么区别？ 网上普遍的回答都是：==比较的是内存地址，equals比较的是值。即 equals比较的是内容,只要值相同就是true。如 String str  = new String(“aaa”); String str1  = new String(“aaa”); boolean bl = str.equals(str1); 结果就">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-08T14:31:25.817Z">
+<meta property="og:updated_time" content="2018-04-10T12:28:03.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文章分类">
-<meta name="twitter:description" content="胆小谨言，难以相处">
+<meta name="twitter:title" content="Java对象的equals方法">
+<meta name="twitter:description" content="作为一个被问的很多的一个面试题：java中==和equals有什么区别？ 网上普遍的回答都是：==比较的是内存地址，equals比较的是值。即 equals比较的是内容,只要值相同就是true。如 String str  = new String(“aaa”); String str1  = new String(“aaa”); boolean bl = str.equals(str1); 结果就">
 
 
 
@@ -145,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="https://lisau.github.io/categories/"/>
+  <link rel="canonical" href="https://lisau.github.io/2018/04/10/java对象的equals方法/"/>
 
 
 
 
 
-  <title>文章分类 | Mr_张先生</title>
+  <title>Java对象的equals方法 | Mr_张先生</title>
   
 
 
@@ -310,40 +311,222 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lisau.github.io/2018/04/10/java对象的equals方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ke Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/17328747.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr_张先生">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">文章分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 4 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java基础/">Java基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java基础技术/">Java基础技术</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具类/">工具类</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">随笔</a><span class="category-list-count">9</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Java对象的equals方法</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T20:26:44+08:00">
+                2018-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础技术/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/04/10/java对象的equals方法/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/04/10/java对象的equals方法/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>作为一个被问的很多的一个面试题：java中==和equals有什么区别？</p>
+<p>网上普遍的回答都是：==比较的是内存地址，equals比较的是值。即</p>
+<p>equals比较的是内容,只要值相同就是true。<br>如</p>
+<p>String str  = new String(“aaa”);</p>
+<p>String str1  = new String(“aaa”);</p>
+<p>boolean bl = str.equals(str1);</p>
+<p>结果就是：true。</p>
+<p>备注：但是如果比较的是str==str1，这个结果就是false（地址引用不同）。</p>
+<p>其实这种回答是很不标准的，稍微标准一点的回答应该JDK自带的一些类对equals的实现各不同，例如</p>
+<p>Object对象的equals的定义是这样的：</p>
+<pre><code>public boolean equals(Object obj) {
+return (this == obj);
+}
+</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>满分是10分的话，这篇文章你给几分</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/ali.png" alt="Ke Zhang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/10/总结/" rel="next" title="抽象类和接口的区别，以及abstract、interface、static、final、super、public、private、protect、default关键词的区别">
+                <i class="fa fa-chevron-left"></i> 抽象类和接口的区别，以及abstract、interface、static、final、super、public、private、protect、default关键词的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/18/家乡三味/" rel="prev" title="家乡三味">
+                家乡三味 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
