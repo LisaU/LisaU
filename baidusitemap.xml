@@ -4,6 +4,118 @@
 
     
   <url>
+    <loc>https://lisau.github.io/2018/04/15/HeapSort/</loc>
+    <lastmod>2018-04-15T03:08:02.980Z</lastmod>
+    <data>
+        <display>
+        <title>Java中希尔排序</title>
+        <pubTime>2018-04-15T02:57:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>排序算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础技术" url="https://lisau.github.io/categories/Java%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lisau.github.io/2018/04/13/quickSort/</loc>
+    <lastmod>2018-04-15T02:57:12.714Z</lastmod>
+    <data>
+        <display>
+        <title>Java中快速排序</title>
+        <pubTime>2018-04-13T09:04:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>排序算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础技术" url="https://lisau.github.io/categories/Java%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lisau.github.io/2018/04/13/InsertSort/</loc>
+    <lastmod>2018-04-15T02:57:01.196Z</lastmod>
+    <data>
+        <display>
+        <title>Java中插入排序</title>
+        <pubTime>2018-04-13T09:04:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>排序算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础技术" url="https://lisau.github.io/categories/Java%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lisau.github.io/2018/04/13/Sort/</loc>
+    <lastmod>2018-04-13T09:10:00.616Z</lastmod>
+    <data>
+        <display>
+        <title>Java中选择排序</title>
+        <pubTime>2018-04-13T08:23:44.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>排序算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础技术" url="https://lisau.github.io/categories/Java%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lisau.github.io/2018/04/10/Logger/</loc>
+    <lastmod>2018-04-13T02:32:53.894Z</lastmod>
+    <data>
+        <display>
+        <title>Log4J的配置及多个logger配置实例</title>
+        <pubTime>2018-04-10T12:26:44.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Logger</tag>
+         
+        <tag>Log4j</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础技术" url="https://lisau.github.io/categories/Java%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://lisau.github.io/2018/04/10/java%E5%AF%B9%E8%B1%A1%E7%9A%84equals%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2018-04-10T12:28:03.432Z</lastmod>
     <data>
