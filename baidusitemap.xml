@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://lisau.github.io/2018/04/19/Servlet%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2018-04-19T12:07:12.034Z</lastmod>
+    <data>
+        <display>
+        <title>Servlet执行流程和生命周期</title>
+        <pubTime>2018-04-19T10:50:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Servlet</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaWeb基础技术" url="https://lisau.github.io/categories/JavaWeb%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://lisau.github.io/2018/04/15/HeapSort/</loc>
     <lastmod>2018-04-15T03:08:02.980Z</lastmod>
     <data>

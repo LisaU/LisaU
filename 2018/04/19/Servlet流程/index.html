@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="java基础,Python,Spring,Hibernate,Mabatis" />
+  <meta name="keywords" content="Java,Servlet," />
 
 
 
@@ -105,19 +105,20 @@
 
 
 
-<meta name="description" content="如果觉得好你就打个赏吧！你的赞许，是我最大的动力     —–支付宝，话不在多，有赏就行！—">
-<meta property="og:type" content="website">
-<meta property="og:title" content="打赏">
-<meta property="og:url" content="https://lisau.github.io/exceptional/index.html">
+<meta name="description" content="1、到底什么是Servlet呢？Servlet是Sun公司提供的一门用于开发动态web网页的技术。Sun公司在API中提供了一个servlet接口，我们如果想使用java程序开发一个动态的web网页，只需要实现servelet接口，并把类部署到web服务器上就可以运行了。 2、Servlet执行过程Servlet程序是由WEB服务器调用，web服务器收到客户端的Servlet访问请求后：　　①We">
+<meta name="keywords" content="Java,Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet执行流程和生命周期">
+<meta property="og:url" content="https://lisau.github.io/2018/04/19/Servlet流程/index.html">
 <meta property="og:site_name" content="Mr_张先生">
-<meta property="og:description" content="如果觉得好你就打个赏吧！你的赞许，是我最大的动力     —–支付宝，话不在多，有赏就行！—">
+<meta property="og:description" content="1、到底什么是Servlet呢？Servlet是Sun公司提供的一门用于开发动态web网页的技术。Sun公司在API中提供了一个servlet接口，我们如果想使用java程序开发一个动态的web网页，只需要实现servelet接口，并把类部署到web服务器上就可以运行了。 2、Servlet执行过程Servlet程序是由WEB服务器调用，web服务器收到客户端的Servlet访问请求后：　　①We">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/R0EPGjr.png">
-<meta property="og:updated_time" content="2018-04-08T14:32:17.654Z">
+<meta property="og:image" content="https://i.imgur.com/LH1EHJ5.png">
+<meta property="og:updated_time" content="2018-04-19T12:07:12.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="打赏">
-<meta name="twitter:description" content="如果觉得好你就打个赏吧！你的赞许，是我最大的动力     —–支付宝，话不在多，有赏就行！—">
-<meta name="twitter:image" content="https://i.imgur.com/R0EPGjr.png">
+<meta name="twitter:title" content="Servlet执行流程和生命周期">
+<meta name="twitter:description" content="1、到底什么是Servlet呢？Servlet是Sun公司提供的一门用于开发动态web网页的技术。Sun公司在API中提供了一个servlet接口，我们如果想使用java程序开发一个动态的web网页，只需要实现servelet接口，并把类部署到web服务器上就可以运行了。 2、Servlet执行过程Servlet程序是由WEB服务器调用，web服务器收到客户端的Servlet访问请求后：　　①We">
+<meta name="twitter:image" content="https://i.imgur.com/LH1EHJ5.png">
 
 
 
@@ -147,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="https://lisau.github.io/exceptional/"/>
+  <link rel="canonical" href="https://lisau.github.io/2018/04/19/Servlet流程/"/>
 
 
 
 
 
-  <title>打赏 | Mr_张先生</title>
+  <title>Servlet执行流程和生命周期 | Mr_张先生</title>
   
 
 
@@ -312,36 +313,428 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lisau.github.io/2018/04/19/Servlet流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ke Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/17328747.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr_张先生">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">打赏</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p><strong>如果觉得好你就打个赏吧！你的赞许，是我最大的动力</strong></p>
-<p><img src="https://i.imgur.com/R0EPGjr.png" alt=""></p>
-<p>   —–支付宝，话不在多，有赏就行！—</p>
-
+          <h1 class="post-title" itemprop="name headline">Servlet执行流程和生命周期</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T18:50:00+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb基础技术/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb基础技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/04/19/Servlet流程/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/04/19/Servlet流程/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="1、到底什么是Servlet呢？"><a href="#1、到底什么是Servlet呢？" class="headerlink" title="1、到底什么是Servlet呢？"></a>1、到底什么是Servlet呢？</h3><p>Servlet是Sun公司提供的一门用于开发动态web网页的技术。Sun公司在API中提供了一个servlet接口，我们如果想使用java程序开发一个动态的web网页，只需要实现servelet接口，并把类部署到web服务器上就可以运行了。</p>
+<h3 id="2、Servlet执行过程"><a href="#2、Servlet执行过程" class="headerlink" title="2、Servlet执行过程"></a>2、Servlet执行过程</h3><p>Servlet程序是由WEB服务器调用，web服务器收到客户端的Servlet访问请求后：<br>　　①Web服务器首先检查是否已经装载并创建了该Servlet的实例对象。如果是，则直接执行第④步，否则，执行第②步。</p>
+<p>　　②装载并创建该Servlet的一个实例对象。 </p>
+<p>　　③调用Servlet实例对象的init()方法。</p>
+<p>　　④创建一个用于封装HTTP请求消息的HttpServletRequest对象和一个代表HTTP响应消息的HttpServletResponse对象，然后调用Servlet的service()方法并将请求和响应对象作为参数传递进去。</p>
+<p>　　⑤WEB应用程序被停止或重新启动之前，Servlet引擎将卸载Servlet，并在卸载之前调用Servlet的destroy()方法。</p>
+<p>Servlet调用图：</p>
+<p><img src="https://i.imgur.com/LH1EHJ5.png" alt=""></p>
+<h3 id="3、Servlet与JSP又有什么区别呢？"><a href="#3、Servlet与JSP又有什么区别呢？" class="headerlink" title="3、Servlet与JSP又有什么区别呢？"></a>3、Servlet与JSP又有什么区别呢？</h3><p>JSP和Servlet的本质是一样的，因为JSP最终需要编译成Servlet才能运行，换句话说JSP是生成Servler的草稿文件。</p>
+<p>JSP就是在HTML中嵌入Java代码，或者使用JSP标签，包括使用用户自定义标签，从而可以动态的提供内容。早起JSP应用比较广泛，一个web应用可以全部由JSP页面组成，只需要少量的JavaBean即可，但是这样导致了JSP职责过于复杂，这是Java EE标准的出现无疑是雪中送炭，因此JSP慢慢发展成单一的表现技术，不再承担业务逻辑组件以及持久层组件的责任。</p>
+<p>JSP的本质是servlet，当用户指定servlet发送请求时，servlet利用输出流动态生成HTML页面。由于包含大量的HTML标签。静态文本等格式导致servlet的开发效率极低，所有的表现逻辑，包括布局、色彩及图像等，都必须耦合在Java代码中，起静态的部分无需Java程序控制，只有那些需要从数据库读取或者需要动态生成的页面内容才使用Java脚本控制。</p>
+<p>因此，JSP页面内容有以下两部分组成：</p>
+<p>静态部分：HTML标签</p>
+<p>动态部分：Java脚本</p>
+<h3 id="4、Servlet登陆例子"><a href="#4、Servlet登陆例子" class="headerlink" title="4、Servlet登陆例子"></a>4、Servlet登陆例子</h3><p>1、先创建web project，项目名为RegisterSystem，</p>
+<p>2、在WebRoot 目录下创建login.jsp文件：</p>
+<pre><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;%
+String path = request.getContextPath();
+String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;
+%&gt;
+
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+&lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;
+
+&lt;title&gt;My JSP &apos;login.jsp&apos; starting page&lt;/title&gt;
+
+    &lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;
+    &lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;
+    &lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;
+    &lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;
+    &lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;
+    &lt;!--
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;
+    --&gt;
+
+  &lt;/head&gt;
+
+  &lt;body&gt;
+This is my JSP page. &lt;br&gt;
+ &lt;form action=&quot;login&quot;&gt;
+username:&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br&gt;
+password:&lt;input type=&quot;password&quot; name=&quot;pwd&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>3、在scr目录下的com.ht.servlet编写AccountBean.java文件，代码如下：</p>
+<pre><code>package com.ht.servlet;
+
+public class AccountBean {
+ private String username;
+ private String password;
+ public String getPassword() {
+  return password;
+ }
+ public void setPassword(String password) {
+  this.password = password;
+ }
+ public String getUsername() {
+  return username;
+ }
+ public void setUsername(String username) {
+  this.username = username;
+ }
+}
+</code></pre><p>4、在scr目录下的com.ht.servlet编写servlet类CheckAccount.java文件，代码如下：</p>
+<pre><code>package com.ht.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class CheckAccount extends HttpServlet {
+
+ @Override
+ protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+   throws ServletException, IOException {
+  doGet(req,resp);
+ }
+
+ @Override
+ public void doGet(HttpServletRequest req, HttpServletResponse resp)
+   throws ServletException, IOException {
+  HttpSession session = req.getSession();
+  AccountBean account = new AccountBean();
+  String username = req.getParameter(&quot;username&quot;);
+  String pwd = req.getParameter(&quot;pwd&quot;);
+  account.setPassword(pwd);
+  account.setUsername(username);
+  if((username != null)&amp;&amp;(username.trim().equals(&quot;jsp&quot;))) {
+  if((pwd != null)&amp;&amp;(pwd.trim().equals(&quot;1&quot;))) {
+  System.out.println(&quot;success&quot;);
+  session.setAttribute(&quot;account&quot;, account);
+  String login_suc = &quot;success.jsp&quot;;
+  resp.sendRedirect(login_suc);
+  return;
+   }
+  }
+  String login_fail = &quot;fail.jsp&quot;;
+  resp.sendRedirect(login_fail);
+  return;
+ }
+
+}
+</code></pre><p>5、在WebRoot目录下编写success.jsp文件 成功后跳转</p>
+<pre><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;%@page import=&quot;com.ht.servlet.AccountBean&quot;%&gt;
+&lt;%
+String path = request.getContextPath();
+String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;
+%&gt;
+
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+&lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;
+
+&lt;title&gt;My JSP &apos;success.jsp&apos; starting page&lt;/title&gt;
+
+    &lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;
+    &lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;
+    &lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;
+    &lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;
+    &lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;
+    &lt;!--
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;
+    --&gt;
+
+  &lt;/head&gt;
+
+  &lt;body&gt;
+
+&lt;%
+AccountBean account = (AccountBean)session.getAttribute(&quot;account&quot;);
+%&gt;
+username:&lt;%= account.getUsername()%&gt;
+ &lt;br&gt;
+ password:&lt;%= account.getPassword() %&gt;
+
+ basePath: &lt;%=basePath%&gt;
+path:&lt;%=path%&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>6、在WebRoot目录下编写fail.jsp文件 失败后跳转</p>
+<pre><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;%
+String path = request.getContextPath();
+String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;
+%&gt;
+
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+&lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;
+
+&lt;title&gt;My JSP &apos;fail.jsp&apos; starting page&lt;/title&gt;
+
+    &lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;
+    &lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;
+    &lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;
+    &lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;
+    &lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;
+    &lt;!--
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;
+    --&gt;
+
+  &lt;/head&gt;
+
+  &lt;body&gt;
+ Login Failed! &lt;br&gt;
+basePath: &lt;%=basePath%&gt;
+path:&lt;%=path%&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>7、修改web.xml配置文件</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app version=&quot;2.5&quot; 
+    xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; 
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+    xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;&gt;
+  &lt;welcome-file-list&gt;
+&lt;welcome-file&gt;login.jsp&lt;/welcome-file&gt;
+  &lt;/welcome-file-list&gt;
+
+  &lt;servlet&gt;
+   &lt;description&gt;This is the description of my J2EE component&lt;/description&gt;
+   &lt;display-name&gt;This is the display name of my J2EE component&lt;/display-name&gt;
+ &lt;servlet-name&gt;CheckAccount&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;com.ht.servlet.CheckAccount&lt;/servlet-class&gt;
+ &lt;/servlet&gt;
+ &lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;CheckAccount&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/login&lt;/url-pattern&gt;
+ &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre><p>输入测试路径：<a href="http://localhost:8080/RegisterSystem/login.jsp" target="_blank" rel="noopener">http://localhost:8080/RegisterSystem/login.jsp</a></p>
+<h3 id="5、Servlet处理中文乱码问题"><a href="#5、Servlet处理中文乱码问题" class="headerlink" title="5、Servlet处理中文乱码问题"></a>5、Servlet处理中文乱码问题</h3><p>注意：</p>
+<p>.处理中文乱码问题</p>
+<p>在Sertlet中加</p>
+<p>response.setContentType(“text/html;charset=utf-8”)</p>
+<p>在jsp页面中加</p>
+<p>&lt;%@ page language=”java” import=”java.util.*,java.net.URLEncoder” pageEncoding=”UTF-8”%&gt;</p>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<p>在servlet中</p>
+<p>String username=request.getParameter(“username”);</p>
+<p>username=new String(username.getBytes(“ISO-8859-1”),”UTF-8”);</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>满分是10分的话，这篇文章你给几分</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/ali.png" alt="Ke Zhang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/15/HeapSort/" rel="next" title="Java中希尔排序">
+                <i class="fa fa-chevron-left"></i> Java中希尔排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/18/家乡三味/" rel="prev" title="家乡三味">
+                家乡三味 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -379,8 +772,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -488,6 +890,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、到底什么是Servlet呢？"><span class="nav-number">1.</span> <span class="nav-text">1、到底什么是Servlet呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、Servlet执行过程"><span class="nav-number">2.</span> <span class="nav-text">2、Servlet执行过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Servlet与JSP又有什么区别呢？"><span class="nav-number">3.</span> <span class="nav-text">3、Servlet与JSP又有什么区别呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、Servlet登陆例子"><span class="nav-number">4.</span> <span class="nav-text">4、Servlet登陆例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、Servlet处理中文乱码问题"><span class="nav-number">5.</span> <span class="nav-text">5、Servlet处理中文乱码问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
